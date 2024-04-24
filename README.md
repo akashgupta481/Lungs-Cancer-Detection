@@ -27,4 +27,5 @@ For any questions or issues, please contact:
 - Name: Akash Gupta
 - Email: akashgupta0919@gmail.com
 
-
+## Home Page Screenshot
+<img width="1440" alt="Screenshot 2024-04-25 at 3 05 17 AM" src="https://github.com/akashgupta481/Lungs-Cancer-Detection/assets/126176668/581d9d14-84e9-4cee-83c4-f2c4bc0d5f6d">
