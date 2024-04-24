@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cancer Detection</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+            background-image: url("https://i.postimg.cc/SK9t8wWY/bg-img.jpg");
+            background-size: cover;
+            background-position: center;
+            overflow-y: auto;
+            height: 1800px;
+        }
+
+        .nav-bar {
+            display: flex;
+            overflow: hidden;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 14px 20px 30px 44px;
+            align-items: center;
+            justify-content: space-between;
+            z-index: 999;
+            font-size: 17px;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+
+        .nav-bar ul {
+            list-style: none;
+            margin: 0;
+            padding: 10px 15px;
+            display: flex;
+            justify-content: flex-start;
+        }
+
+        .nav-bar li {
+            margin-right: 30px;
+        }
+
+        .nav-bar a {
+            text-decoration: none;
+            color: #e0cece;
+            transition: color 0.2s ease;
+        }
+
+        .nav-bar a:hover {
+            color: red;
+        }
+
+        .logo {
+            margin-right: 60px;
+            margin-bottom: -10px;
+        }
+        
+        .logo img {
+            width: 170px; /* Adjust as needed */
+            height: 40px; /* Adjust as needed */
+        }
+
+        .home-page {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background-image: url("https://i.postimg.cc/QNTkM8xD/temp-Image3-XS7-SL.avif");
+            background-size: cover;
+            background-position: center;
+        }
+
+        .about-text {
+            max-width: 800px;
+            padding: 20px;
+            background-color: rgba(17, 17, 37, 0.8);
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(220, 215, 215, 0.1);
+            color: #e8dfdf;
+        }
+
+        .container {
+            position: relative;
+            width: 90%;
+            max-width: 600px;
+            margin: 300px auto;
+            padding: 20px;
+            background-color: rgba(17, 17, 37, 0.8);
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(220, 215, 215, 0.1);
+            color: #e8dfdf;
+            
+        }
+
+        .container::before {
+            content: '';
+            position: absolute;
+            top: -20px;
+            left: -20px;
+            right: -20px;
+            bottom: -20px;
+            background-image: url("https://i.postimg.cc/SK9t8wWY/bg-img.jpg");
+            background-size: cover;
+            filter: blur(100px);
+            z-index: -1;
+            border-radius: 10px;
+        }
+
+        h1, h3 {
+            text-align: center;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        }
+
+        p {
+            color: #e8dfdf;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+
+        .upload-label {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+
+        .upload-button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #007bff;
+            border: none;
+            color: #fff;
+            cursor: pointer;
+            display: block;
+            margin: 0 auto 20px;
+        }
+
+        .image-container {
+            text-align: center;
+        }
+
+        .image-container img {
+            max-width: 100%;
+            max-height: 200px;
+            border-radius: 5px;
+            display: block;
+            margin: 0 auto 20px;
+        }
+
+        .prediction-label {
+            font-size: 24px;
+            font-weight: bold;
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        #uploadAgainButton {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #007bff;
+            border: none;
+            color: #fff;
+            cursor: pointer;
+            display: block;
+            margin: 0 auto;
+        }
+
+        .contact-page {
+            position: fixed;
+            bottom: -100%;
+            left: 0;
+            width: 100%;
+            height: 160px;
+            padding: 12px;
+            background-color: black;
+            color: rgb(221, 210, 210);
+            border-radius: 0px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            transition: bottom 0.5s ease;
+            z-index: 998;
+        }
+
+        .contact-page h2 {
+            font-weight: bold;
+        }
+
+        .contact-page.show {
+            bottom: 0;
+        }
+
+        @media screen and (max-width: 768px) {
+            .nav-bar ul {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .nav-bar li {
+                margin-right: 0;
+                margin-bottom: 10px;
+            }
+
+            .container {
+                width: 90%;
+                margin: 30px auto;
+            }
+        }
+
+        @media screen and (max-width: 480px) {
+            .container {
+                width: 95%;
+                padding: 15px;
+            }
+
+            .contact-page {
+                height: 180px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="nav-bar">
+        <ul>
+            <li><a href="#home-page">Home</a></li>
+            <li><a href="#container">Detect</a></li>
+            <li><a href="#" onclick="toggleContact()">Contact</a></li>
+        </ul>
+        <div class="logo">
+            <img src="https://i.postimg.cc/7LwfTtQP/temp-Imagednh-Ir-F.avif" alt="Logo">
+        </div>
+    </div>
+    <div class="home-page" id="home-page">
+        <div class="about-text">
+            <h1>CANCER</h1>
+            <p>
+                Cancer is a large group of diseases with one thing in common:<br> They all happen when normal cells become
+                cancerous cells that multiply and spread.<br>
+
+                Cancer is the second most common cause of death in the U.S.<br> But fewer people are dying of cancer now than 20
+                years ago.<br> Early detection and innovative treatments are curing cancer and helping people with cancer live
+                longer.<br> At the same time, medical researchers are identifying independent risk factors <br> linked to developing
+                cancer to help prevent people from developing cancer. <br>
+            </p><br>
+            <h3>LUNGS CANCER</h3>
+            <p>
+                Lung cancer is a kind of cancer that starts as a growth of cells in the lungs.<br> The lungs are two spongy organs
+                in the chest that control breathing.<br>
+
+                Lung cancer is the leading cause of cancer deaths worldwide.<br>
+
+                People who smoke have the greatest risk of lung cancer. <br>The risk of lung cancer increases with the length of
+                time and number of cigarettes smoked.<br> Quitting smoking, even after smoking for many years, significantly lowers
+                the chances of developing lung cancer.<br> <p style="text-align: center,font-weight: bold">This is a Project which uses a Machine Learning Model to Predict the <br>presence of Lung cancer by using CT Scan images of Lungs.</p>
+            </p>
+        </div>
+    </div>
+
+    <div class="container" id="container">
+        <h1>Lungs Cancer Detection</h1>
+        <p class="upload-label">Upload the CT Scan Image to Predict</p>
+        <input type="file" id="fileInput" style="display: none;" />
+        <button class="upload-button" onclick="uploadImage()">Upload Image</button>
+        <div class="image-container" style="display: none;">
+            <img id="uploadedImage" src="" alt="Uploaded Image" />
+        </div>
+        <p id="predictionLabel" class="prediction-label"></p>
+        <button id="uploadAgainButton" onclick="uploadAgain()" style="display: none;">
+            Upload Again
+        </button>
+    </div>
+
+    <div class="contact-page" id="contactPage">
+        <h2>Contact Us</h2>
+        <p>Email: akashgupta0919@gmail.com</p>
+        <p>Phone: +91 8516852232</p>
+        <p style="text-align:center">Copyright © 2024 Lungs Cancer Detection by Akash</p>
+    </div>
+
+    <script>
+        function uploadImage() {
+            var fileInput = document.getElementById('fileInput');
+            fileInput.click();
+
+            fileInput.addEventListener('change', function () {
+                var file = fileInput.files[0];
+                if (file) {
+                    var reader = new FileReader();
+                    reader.readAsDataURL(file);
+                    reader.onload = function (e) {
+                        var image = document.getElementById('uploadedImage');
+                        image.src = e.target.result;
+                        image.parentElement.style.display = 'block';
+                        resizeImage(image);
+                        predictImage(file);
+                    };
+                }
+            });
+        }
+
+        function resizeImage(image) {
+            var canvas = document.createElement('canvas');
+            var ctx = canvas.getContext('2d');
+            canvas.width = 400; // Fixed width
+            canvas.height = 300; // Fixed height
+            ctx.drawImage(image, 0, 0, 400, 300);
+            var resizedDataUrl = canvas.toDataURL('image/jpeg', 1.0); // Resize to JPEGwith quality 0.5 (adjust as needed)
+            image.src = resizedDataUrl;
+        }
+
+        function predictImage(file) {
+            var formData = new FormData();
+            formData.append('file', file);
+
+            fetch('/predict', {
+                method: 'POST',
+                body: formData,
+            })
+                .then((response) => response.json())
+                .then((data) => {
+                    var predictionLabel = document.getElementById('predictionLabel');
+                    var uploadAgainButton = document.getElementById('uploadAgainButton');
+
+                    predictionLabel.textContent = data.prediction;
+                    if (data.prediction == 'Normal') {
+                        predictionLabel.style.color = 'green';
+                    } else {
+                        predictionLabel.style.color = 'red';
+                    }
+                    predictionLabel.style.display = 'block';
+                    uploadAgainButton.style.display = 'block';
+                    document.querySelector('.upload-button').style.display = 'none';
+                })
+                .catch((error) => console.error('Error:', error));
+        }
+
+        function uploadAgain() {
+            location.reload();
+        }
+
+        function toggleContact() {
+            var contactPage = document.getElementById('contactPage');
+            contactPage.classList.toggle('show');
+        }
+    </script>
+</body>
+
+</html>
