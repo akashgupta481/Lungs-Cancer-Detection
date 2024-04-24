@@ -28,4 +28,5 @@ For any questions or issues, please contact:
 - Email: akashgupta0919@gmail.com
 
 ## Home Page Screenshot
-<img width="1440" alt="Screenshot 2024-04-25 at 3 05 17 AM" src="https://github.com/akashgupta481/Lungs-Cancer-Detection/assets/126176668/581d9d14-84e9-4cee-83c4-f2c4bc0d5f6d">
+
+<img width="1440" alt="Screenshot 2024-04-25 at 3 04 59 AM" src="https://github.com/akashgupta481/Lungs-Cancer-Detection/assets/126176668/7c7cb63f-2934-4680-9dd1-f31d2c65fc42">
