@@ -24,8 +24,7 @@ This project aims to detect lung cancer using a Convolutional Neural Network (CN
 
 ## Contact
 For any questions or issues, please contact:
-- Name: [Your Name]
-- Email: [Your Email]
+- Name: Akash Gupta
+- Email: akashgupta0919@gmail.com
 
-## License
-This project is licensed under the [MIT License](LICENSE).
+
