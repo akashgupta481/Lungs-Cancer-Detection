@@ -30,3 +30,11 @@ For any questions or issues, please contact:
 ## Home Page Screenshot
 
 <img width="1440" alt="Screenshot 2024-04-25 at 3 04 59 AM" src="https://github.com/akashgupta481/Lungs-Cancer-Detection/assets/126176668/7c7cb63f-2934-4680-9dd1-f31d2c65fc42">
+
+## Detect Page Screenshot
+
+<img width="1440" alt="Screenshot 2024-04-25 at 2 46 44 PM" src="https://github.com/akashgupta481/Lungs-Cancer-Detection/assets/126176668/2979f521-f387-442c-857e-de01ec97d1d4">
+
+## Contact Page Screenshot
+
+<img width="1440" alt="Screenshot 2024-04-25 at 2 47 12 PM" src="https://github.com/akashgupta481/Lungs-Cancer-Detection/assets/126176668/cba66d6b-a1cd-4ac5-bd31-3573553cce32">
