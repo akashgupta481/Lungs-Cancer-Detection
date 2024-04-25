@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cancer Detection</title>
+    <title>Lungs Cancer Detection</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -56,12 +56,12 @@
 
         .logo {
             margin-right: 60px;
-            margin-bottom: -10px;
+            margin-bottom: -20px;
         }
         
         .logo img {
-            width: 170px; /* Adjust as needed */
-            height: 40px; /* Adjust as needed */
+            width: 70px; /* Adjust as needed */
+            height: 70px; /* Adjust as needed */
         }
 
         .home-page {
@@ -229,7 +229,7 @@
             <li><a href="#" onclick="toggleContact()">Contact</a></li>
         </ul>
         <div class="logo">
-            <img src="https://i.postimg.cc/7LwfTtQP/temp-Imagednh-Ir-F.avif" alt="Logo">
+            <img src="https://i.postimg.cc/V6dcvSzX/Png-Item-6185734.png" alt="Logo">
         </div>
     </div>
     <div class="home-page" id="home-page">
@@ -306,9 +306,10 @@
             canvas.width = 400; // Fixed width
             canvas.height = 300; // Fixed height
             ctx.drawImage(image, 0, 0, 400, 300);
-            var resizedDataUrl = canvas.toDataURL('image/jpeg', 1.0); // Resize to JPEGwith quality 0.5 (adjust as needed)
+            var resizedDataUrl = canvas.toDataURL('image/jpeg', 10); // Resize to JPEGwith quality 0.5 (adjust as needed)
             image.src = resizedDataUrl;
         }
+        
 
         function predictImage(file) {
             var formData = new FormData();
