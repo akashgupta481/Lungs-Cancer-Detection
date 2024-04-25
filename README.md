@@ -21,6 +21,7 @@ This project aims to detect lung cancer using a Convolutional Neural Network (CN
 - Install required dependencies: `pip install -r requirements.txt`
 - Run the Flask app: `python app.py`
 - Access the web interface in your browser at `http://localhost:5000`
+- Make sure 'Model.h5' path is correct in 'webApp.py'
 
 ## Contact
 For any questions or issues, please contact:
